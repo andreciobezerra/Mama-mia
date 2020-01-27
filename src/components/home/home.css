@@ -1,0 +1,9 @@
+.cards{
+  width: 90%;
+  display:flex;
+  margin: 2vh auto;
+}
+
+.link{
+  text-decoration: none;
+}

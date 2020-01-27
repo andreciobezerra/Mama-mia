@@ -1,0 +1,9 @@
+
+.logos{
+  width: 100%;
+}
+
+.everywhere{
+  display: flex;
+  justify-content: center;
+}

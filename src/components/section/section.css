@@ -1,0 +1,15 @@
+.title{
+  font-size: x-large;
+  margin-left: 1vw;
+
+}
+
+li{
+  font-size: larger;
+  margin: 2vh auto;
+  border-bottom: 0.3vh dotted black;
+}
+
+.right{
+  float: right;
+}
