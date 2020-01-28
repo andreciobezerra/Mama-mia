@@ -1,0 +1,37 @@
+.titleMsg{
+  margin: 3vh 33%;
+  font-size: xx-large;
+  display: flex;
+  
+}
+
+form{
+  margin: auto 33%;
+  font-size: x-large;
+  display: flex;
+  flex-direction: column;
+}
+
+label{
+  margin-right: 2 vw;
+}
+textarea{
+  min-height: 10vh;
+}
+
+input{
+  height: 3vh;;
+}
+
+.entries{
+  width: 30vw;
+}
+
+.sendBtn{
+  background-color: green;
+  color: white;
+  font-size: large;
+  margin-top: 2vh;
+  width: 15vw;
+  height: 5vh;
+}

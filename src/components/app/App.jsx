@@ -6,6 +6,7 @@ import Home from '../home/Home'
 import Everywhere from '../everywhere/Everywhere'
 import Menu from '../menu/Menu'
 import About from '../about/About'
+import Contact from '../contact/Contact'
 
 const App = () => {
   return (
@@ -17,7 +18,7 @@ const App = () => {
       <Route exact path='/menu' component={Menu} />
       <Route path='/menu/:section' component={Menu} />
       <Route exact path='/about' component={About} />
-      {/*<Route exact path='/contact' component={Contact} />*/}
+      <Route exact path='/contact' component={Contact} />
     </Router>
   )
 }
@@ -25,7 +26,6 @@ const App = () => {
 export default App
 
 /* TODO 
-  page of contact
   responsivity
-  api
+  deploy
 */

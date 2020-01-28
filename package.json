@@ -5,11 +5,15 @@
   "main": "index.js",
   "scripts": {
     "start": "BROWSER=chromium-browser BROWSER_ARGS=--incognito react-scripts start",
-    "build": "react-scripts build"
+    "build": "react-scripts build",
+    "server": "json-server --watch ./public/db.json --port 3001",
+    "start-dev": "npm run start & npm run server"
   },
   "author": "Andrécio Costa Bezerra",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.19.2",
+    "json-server": "^0.15.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-router-dom": "^5.1.2",

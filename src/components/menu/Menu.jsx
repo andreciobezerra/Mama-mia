@@ -1,43 +1,38 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import api from '../../api'
 import './menu.css'
 import Section from '../section/Section'
 
 const Menu = (props) => {
-  const dishes = {
-    title: 'Dishes',
-    items: [
-      { name: 'Pizza', price: '20.00' },
-      { name: 'Lasagna', price: '25.00' },
-      { name: 'Caneloni', price: '15.00' }
-    ]
-  }
-  const desserts = {
-    title: 'Desserts',
-    items: [
-      { name: 'Panna Cotta', price: '10.00' },
-      { name: 'Tiramisù', price: '7.50' },
-      { name: 'Semifreddo', price: '5.00' }
-    ]
-  }
-  const drinks = {
-    title: 'Drinks',
-    items: [
-      { name: 'Coca', price: '2.00' },
-      { name: 'Beer', price: '2.50' },
-      { name: 'Coffee', price: '1.50' }
-    ]
-  }
-
-  const sections = [dishes, desserts, drinks]
-  let menuSections = sections.filter(section => section.title===props.match.params.section)
+  const [menu, setMenu] = useState([])
+  const section = props.match.params.section
+  let funct = ((section === undefined) ? api.loadMenu() : api.loadFilteredMenu(section) )
   
-  if( menuSections.length === 0){
-    menuSections = sections
-  }
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        let response =await funct
+        let menuByCategories = response.data.reduce((categorie, item)=>{
+          categorie[item.type] = categorie[item.type] || []
+          categorie[item.type].push({id: item.id, name: item.name, price: item.price})
+          return categorie
+        },{})
+        
+        let menuArray = Object.keys(menuByCategories).map((key) => ({type: key, items: menuByCategories[key]}))
+        
+        setMenu(menuArray)
+
+      } catch (error) {
+        console.error(error)
+      }
+    }
+
+    fetchData()
+  }, [])
 
   return (
     <div>
-      {menuSections.map(menuSection => <Section key={menuSection.title} title={menuSection.title} items={menuSection.items} />)}
+      {menu.map(menuSection => <Section key={menuSection.type} title={menuSection.type} items={menuSection.items} />)}
     </div>
   )
 }

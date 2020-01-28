@@ -1,0 +1,29 @@
+{
+  "menu":[
+    {"id": 1 ,"name": "Pizza","price": "20.00","type": "dishes"},
+    {"id": 2, "name": "Lasagna","price": "25.00","type": "dishes"},
+    {"id": 3, "name": "Caneloni","price": "15.00","type": "dishes"},
+    {"id": 4, "name": "Panna Cotta", "price": "10.00","type": "desserts"},
+    {"id": 5, "name": "Tiramisù", "price": "7.50","type": "desserts"},
+    {"id": 6, "name": "Semifreddo", "price": "5.00","type": "desserts"},
+    {"id": 7, "name": "Coca", "price": "2.00","type": "drinks"},
+    {"id": 8, "name": "Beer", "price": "2.50","type": "drinks"},
+    {"id": 9, "name": "Coffee", "price": "1.50","type": "drinks"}
+  ],
+  
+  "categories":[
+      { "title": "Dishes", "img": "images/dishes.jpg"},
+      { "title": "Desserts", "img": "images/desserts.jpeg"},
+      { "title": "Drinks", "img": "images/drinks.png"}
+  ],
+
+  "socials":[
+    { "title": "IFood", "img": "images/ifood.png"},
+    { "title": "Uber Eats", "img": "images/ubereats.jpg"},
+    { "title": "Whatsapp", "img": "images/whatsapp.png"},
+    { "title": "Telegram", "img": "images/telegram.jpeg"},
+    { "title": "Facebook", "img": "images/facebook.png"},
+    { "title": "Instagram", "img": "images/instagram.jpeg"}
+  ]
+}
+    
