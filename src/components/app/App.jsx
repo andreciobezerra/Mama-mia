@@ -26,6 +26,5 @@ const App = () => {
 export default App
 
 /* TODO 
-  responsivity
   deploy
 */

@@ -1,37 +1,25 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import api from '../../api'
 import './menu.css'
 import Section from '../section/Section'
+import { useFetch } from '../../useHooks'
 
 const Menu = (props) => {
-  const [menu, setMenu] = useState([])
-  const section = props.match.params.section
-  let funct = ((section === undefined) ? api.loadMenu() : api.loadFilteredMenu(section) )
-  
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        let response =await funct
-        let menuByCategories = response.data.reduce((categorie, item)=>{
-          categorie[item.type] = categorie[item.type] || []
-          categorie[item.type].push({id: item.id, name: item.name, price: item.price})
-          return categorie
-        },{})
-        
-        let menuArray = Object.keys(menuByCategories).map((key) => ({type: key, items: menuByCategories[key]}))
-        
-        setMenu(menuArray)
+  let section = props.match.params.section
+  let funct = ((section === undefined) ? api.loadMenu : api.loadFilteredMenu)
+  let data = useFetch(funct,section )  
+  let menu = ((myData) => {
+    let menuByCategories = myData.reduce((categorie, item) => {
+    categorie[item.type] = categorie[item.type] || []
+    categorie[item.type].push({ id: item.id, name: item.name, price: item.price })
+    return categorie
+    }, {})
 
-      } catch (error) {
-        console.error(error)
-      }
-    }
-
-    fetchData()
-  }, [])
+    return Object.keys(menuByCategories).map((key) => ({ type: key, items: menuByCategories[key] }))
+  })(data)
 
   return (
-    <div>
+    <div className='menu'>
       {menu.map(menuSection => <Section key={menuSection.type} title={menuSection.type} items={menuSection.items} />)}
     </div>
   )

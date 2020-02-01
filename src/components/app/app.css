@@ -8,3 +8,12 @@ body{
   background-image:url(/images/logo.jpg);
   background-size: 100% 75vh; 
 }
+
+@media only screen and (max-width: 800px){
+  .logo{
+    display: flex;
+    
+    justify-self: center;
+    align-self: center;
+  }
+}

@@ -1,5 +1,6 @@
 .nav-bar{
-  margin-top:1px;
+  width: 100vw;
+  margin:1px auto 5px auto;
   border: 2px solid green;
   border-radius: 3px;
   background-color: green;
@@ -18,4 +19,12 @@
 
 .link:hover{
   color:red
+}
+
+@media only screen and (max-width: 800px){
+  .nav-bar{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }

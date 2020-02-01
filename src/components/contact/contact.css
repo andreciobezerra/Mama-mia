@@ -1,3 +1,8 @@
+.contactForm{
+  display: flex;
+  flex-direction: column;
+}
+
 .titleMsg{
   margin: 3vh 33%;
   font-size: xx-large;
@@ -15,6 +20,7 @@ form{
 label{
   margin-right: 2 vw;
 }
+
 textarea{
   min-height: 10vh;
 }
@@ -32,6 +38,26 @@ input{
   color: white;
   font-size: large;
   margin-top: 2vh;
-  width: 15vw;
+  width: 50%;
   height: 5vh;
+}
+
+@media only screen and (max-width: 800px){
+  .entries{
+    width: 50vw;
+  }
+
+  .titleMsg{
+    margin: auto 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  form{
+    margin: auto 25%;
+  }
+
+  .sendBtn{
+    width: 80%;
+  }
 }

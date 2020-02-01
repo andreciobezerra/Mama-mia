@@ -7,3 +7,10 @@
   display: flex;
   justify-content: center;
 }
+
+@media only screen and (max-width: 400px){
+  .everywhere{
+    display: flex;
+    flex-direction: column;
+  }
+}

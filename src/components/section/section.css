@@ -2,7 +2,6 @@
   text-transform: capitalize;
   font-size: xx-large;
   margin-left: 1vw;
-
 }
 
 li{
@@ -13,4 +12,24 @@ li{
 
 .right{
   float: right;
+}
+
+@media only screen and (max-width: 800px){
+  .title{
+    margin: auto 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  ul{
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  li{
+    width: 75vw;
+  }
 }

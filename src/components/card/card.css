@@ -19,3 +19,11 @@
 p{
   text-decoration: none;
 }
+
+/* mobile */
+@media screen and (max-width: 800px){
+  .card-section{
+  width:  50vw;
+  font-size: 8vw;  
+  }
+}

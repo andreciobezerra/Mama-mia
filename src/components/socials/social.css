@@ -3,3 +3,10 @@
   border-radius: 5px;;
   margin: 2vh 2vw;
 }
+
+@media only screen and (max-width:400px){
+  .img{
+    size: 80%;
+    margin: 3px auto
+  }
+}

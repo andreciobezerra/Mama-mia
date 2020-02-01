@@ -1,23 +1,14 @@
-import React , {useEffect, useState} from 'react'
+import React from 'react'
 import Social from '../socials/Social'
 import './everywhere.css'
 import api from '../../api'
+import { useFetch} from '../../useHooks'
 
 const Everywhere = () => {
-  const [socialSection1, setSection1] = useState([]) 
-  const [socialSection2, setSection2] = useState([]) 
-
-   useEffect(()=> {
-    async function fetchData(){
-      let response = await api.loadSocials()
-      let socialsSections = response.data
-      setSection1(socialsSections.slice(0,3))
-      setSection2(socialsSections.slice(3))
-    }
-
-    fetchData()
-   }, [])
-   
+  let socials = useFetch(api.loadSocials) 
+  let socialSection1 = socials.slice(0,3)
+  let socialSection2 = socials.slice(3)
+  
   return (
     <div>
       <div className='everywhere'>
