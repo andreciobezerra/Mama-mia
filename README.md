@@ -15,4 +15,4 @@ After cloning this repository, go the folder and typing  _npm install_  and next
 
 ## Version 1.0.0
 
-The main functionalities are ok. The next will are to add one button for switch the unit system(imperial/metric) for temperature and resolve one problem with cookies and CORS
+The main functionalities are ok. 
