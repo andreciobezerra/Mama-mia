@@ -24,7 +24,3 @@ const App = () => {
 }
 
 export default App
-
-/* TODO 
-  deploy
-*/

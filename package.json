@@ -1,9 +1,12 @@
 {
+  "homepage": "https://andreciobezerra.github.io/mama-mia",
   "name": "mama-mia",
   "version": "1.0.0",
   "description": "A restaurant page created using React",
   "main": "index.js",
   "scripts": {
+    "predeploy":"npm run build",
+    "deploy": "gh-pages -d build",
     "start": "BROWSER=chromium-browser BROWSER_ARGS=--incognito react-scripts start",
     "build": "react-scripts build",
     "server": "json-server --watch ./public/db.json --port 3001",
@@ -30,5 +33,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^2.2.0"
   }
 }
